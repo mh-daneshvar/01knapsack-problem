@@ -5,7 +5,6 @@
   "keywords": [
     "01knapsack",
     "nodejs",
-    "typescript",
     "dynamic-programming",
     "dp"
   ],
@@ -13,14 +12,8 @@
   "license": "ISC",
   "type": "commonjs",
   "main": "./index.js",
-  "scripts": {
-    "build": "tsc",
-    "start": "node ./dist",
-    "start:dev": "npm run build && node ./dist"
-  },
-  "bin": {
-    "rj": "./dist/index.js"
-  },
+  "scripts": {},
+  "bin": {},
   "dependencies": {},
   "devDependencies": {}
 }
