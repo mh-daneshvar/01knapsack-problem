@@ -1,0 +1,19 @@
+{
+  "name": "01knapsack-problem",
+  "version": "0.0.5",
+  "description": "",
+  "keywords": [
+    "01knapsack",
+    "nodejs",
+    "dynamic-programming",
+    "dp"
+  ],
+  "author": "daneshvar.email@gmail.com",
+  "license": "ISC",
+  "type": "commonjs",
+  "main": "./index.js",
+  "scripts": {},
+  "bin": {},
+  "dependencies": {},
+  "devDependencies": {}
+}
