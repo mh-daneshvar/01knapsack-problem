@@ -1,0 +1,26 @@
+{
+  "name": "01knapsack-problem",
+  "version": "0.0.5",
+  "description": "",
+  "keywords": [
+    "01knapsack",
+    "nodejs",
+    "typescript",
+    "dynamic-programming",
+    "dp"
+  ],
+  "author": "daneshvar.email@gmail.com",
+  "license": "ISC",
+  "type": "commonjs",
+  "main": "./index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./dist",
+    "start:dev": "npm run build && node ./dist"
+  },
+  "bin": {
+    "rj": "./dist/index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
