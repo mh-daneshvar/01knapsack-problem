@@ -17,8 +17,8 @@
     "clean": "rimraf dist",
     "test": "npm run clean && jest",
     "test:coverage": "npm run clean && jest --coverage",
-    "build": "tsc",
     "start": "node ./dist",
+    "build": "npm run clean && tsc",
     "start:dev": "npm run build && node ./dist"
   },
   "bin": {},
