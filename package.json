@@ -14,15 +14,25 @@
   "type": "commonjs",
   "main": "./index.js",
   "scripts": {
-    "build": "tsc",
+    "clean": "rimraf dist && rimraf coverage",
+    "test": "npm run clean && jest",
+    "test:coverage": "npm run clean && jest --coverage",
+    "test:bdd": "cucumber-js tests/bdd/features",
     "start": "node ./dist",
-    "start:dev": "npm run build && node ./dist"
+    "build": "npm run clean && tsc",
+    "start:dev": "npm run build && node ./dist --resolveJsonModule"
   },
   "bin": {},
-  "dependencies": {},
   "devDependencies": {
+    "@cucumber/cucumber": "7.3.0",
+    "@types/jest": "26.0.24",
     "@types/node": "15.12.5",
+    "jest": "27.0.6",
+    "ts-jest": "27.0.3",
     "ts-node": "10.0.0",
     "typescript": "4.3.4"
+  },
+  "dependencies": {
+    "rimraf": "3.0.2"
   }
 }
