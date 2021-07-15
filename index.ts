@@ -15,4 +15,4 @@ const items = [
   new ItemModel('element 9', 64, 676)
 ]
 
-Pack.pack(Strategies.TABULATION, items, 5200)
+Pack.pack(Strategies.TABULATION, items, 5200).printInfo()

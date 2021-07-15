@@ -12,7 +12,7 @@ describe('Item Model Class', () => {
 
     const itemModel = new ItemModel(item.name, item.value, item.weight);
 
-    expect(itemModel.printInfo).toBe(expectedOutput);
+    expect(itemModel.printInfo()).toBe(expectedOutput);
   })
 
 })
