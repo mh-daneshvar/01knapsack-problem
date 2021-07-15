@@ -20,6 +20,7 @@ export default class Context {
   }
 
   /**
+   * Mutator method for strategy
    *
    * @param strategyName
    */
@@ -42,9 +43,18 @@ export default class Context {
   }
 
   /**
+   * Accessor method for strategy attribute
    *
    */
-  public executeStrategy(): SolutionModel | null {
+  public getStrategy(): Strategy | undefined {
+    return this.strategy
+  }
+
+  /**
+   * Execute current strategy
+   *
+   */
+  public executeStrategy(): SolutionModel {
     if (this.strategy) {
       return this.strategy.solve()
     }

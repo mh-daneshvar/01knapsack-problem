@@ -25,4 +25,5 @@ export default class ItemModel extends BaseModel {
   public printInfo(): string {
     return this.name + ' [value = ' + this.value + ', weight = ' + this.weight + ']';
   }
+
 }
