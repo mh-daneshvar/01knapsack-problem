@@ -1,3 +1,13 @@
+import Pack       from '../../src/Pack'
+import ItemModel  from '../../src/models/Item.model'
+import Strategies from '../../src/strategies/strategies.enum'
+
+const normalItems: ItemModel[] = [
+  new ItemModel('element 1', 13, 9072),
+  new ItemModel('element 2', 40, 3380),
+  new ItemModel('element 3', 64, 676)
+]
+
 describe('Pack Class', () => {
 
   /*
@@ -16,25 +26,73 @@ describe('Pack Class', () => {
    */
   describe('validateInputs method', () => {
     describe('check invalid strategy', () => {
-      it.todo('undefined strategy name')
+      it('undefined strategy name', () => {
+        const validation = () => {
+          // @ts-ignore
+          Pack.validateInputs(undefined, emptyItems, 20)
+        }
+        expect(validation).toThrowError()
+      })
 
-      it.todo('invalid strategy name')
+      it('invalid strategy name', () => {
+        const validation = () => {
+          // @ts-ignore
+          Pack.validateInputs('invalid-strategy', emptyItems, 20)
+        }
+        expect(validation).toThrowError()
+      })
     })
 
     describe('check invalid items', () => {
-      it.todo('undefined items array')
+      it('undefined items array', () => {
+        const validation = () => {
+          // @ts-ignore
+          Pack.validateInputs(Strategies.TABULATION, undefined, 20)
+        }
+        expect(validation).toThrowError()
+      })
 
-      it.todo('empty items array')
+      it('empty items array', () => {
+        const validation = () => {
+          // @ts-ignore
+          Pack.validateInputs(Strategies.TABULATION, [], 20)
+        }
+        expect(validation).toThrowError()
+      })
     })
 
     describe('check invalid capacity', () => {
-      it.todo('undefined capacity')
+      it('undefined capacity', () => {
+        const validation = () => {
+          // @ts-ignore
+          Pack.validateInputs(Strategies.TABULATION, normalItems, undefined)
+        }
+        expect(validation).toThrowError()
+      })
 
-      it.todo('null capacity')
+      it('null capacity', () => {
+        const validation = () => {
+          // @ts-ignore
+          Pack.validateInputs(Strategies.TABULATION, normalItems, null)
+        }
+        expect(validation).toThrowError()
+      })
 
-      it.todo('negative capacity')
+      it('negative capacity', () => {
+        const validation = () => {
+          // @ts-ignore
+          Pack.validateInputs(Strategies.TABULATION, normalItems, -10)
+        }
+        expect(validation).toThrowError()
+      })
 
-      it.todo('too much capacity')
+      it('too much capacity', () => {
+        const validation = () => {
+          // @ts-ignore
+          Pack.validateInputs(Strategies.TABULATION, normalItems, 1000000) // todo: change the maximum capacity
+        }
+        expect(validation).toThrowError()
+      })
     })
   })
 })
