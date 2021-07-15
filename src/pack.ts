@@ -1,8 +1,11 @@
-import ItemModel  from './models/item.model'
-import Context    from './strategies/context'
-import Strategies from './strategies/strategies.enum'
+import ItemModel     from './models/item.model'
+import Context       from './strategies/context'
+import Strategies    from './strategies/strategies.enum'
+import SolutionModel from './models/solution.model'
 
 export default class Pack {
+
+  private static solution: SolutionModel
 
   /**
    *
@@ -10,7 +13,7 @@ export default class Pack {
    * @param items
    * @param capacity
    */
-  public static pack(strategyName: Strategies, items: ItemModel[], capacity: number) {
+  public static pack(strategyName: Strategies, items: ItemModel[], capacity: number): SolutionModel {
     // Validate the given inputs
     Pack.validateInputs(strategyName, items, capacity);
 
@@ -19,12 +22,27 @@ export default class Pack {
     strategy.setStrategy(strategyName)
 
     // Get the solution
-    const solution = strategy.executeStrategy()
+    Pack.solution = strategy.executeStrategy()
 
-    // Do what you want
-    if (solution) {
-      solution.printInfo()
+    return Pack.solution
+  }
+
+  /**
+   * print the solution
+   *
+   */
+  public static display(): void {
+    if (Pack.solution) {
+      Pack.solution.printInfo()
     }
+  }
+
+  /**
+   * print the solution
+   *
+   */
+  public static getSolution(): SolutionModel {
+    return Pack.solution
   }
 
   /**
