@@ -93,6 +93,7 @@ take the absolute address of input file. Input file should be placed in "files" 
 output of pack method is a string which contains the best solutions.
 
 for example if you put this content in the ./files/example_input:
+
 ```
 81 : (1,53.38,€45) (2,88.62,€98) (3,78.48,€3) (4,72.30,€76) (5,30.18,€9) (6,46.34,€48)
 8 : (1,15.3,€34)
@@ -101,35 +102,50 @@ for example if you put this content in the ./files/example_input:
 ```
 
 you will get below solutions in the ./files/example_output:
+
 ```
 4
 -
 7,2
 8,9
 ```
+
 ## How to use
 
 At the first step you should install all packages, so run this command:
+
 ```npm run install```
 
 Then put your input file into the "files" directory. We assume that the name of file is "example_input".
 
 We use typescript in this project, so lets build it using:
+
 ```npm run build```
 
 For the last step run the project:
+
 ```npm run start```
 
 You can find output file in "./file" directory. Based on our above idea, output file will be "example_output".
 
-## Test and Coverage
-We use jest framework for providing unit tests.
-All tests are exist under "tests" directory.
+## Development
+
+### Hot Reload
+
+For development purpose use the below command to build and run at same time:
+
+```npm run start```
+
+### Test and Coverage
+
+We use jest framework for providing unit tests. All tests are exist under "tests" directory.
 
 We can run all unit tests by this command:
+
 ```npm run test```
 
 In order to be aware of code-coverage we can use:
+
 ```npm run test:coverage```
 
 then pay attention to the "./coverage/lcov-report/index.html" file. 
