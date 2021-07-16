@@ -27,4 +27,19 @@ export default class SolutionModel extends BaseModel {
     })
   }
 
+  /**
+   *
+   */
+  public getResult(): string {
+    if (!this.items || this.items.length < 1) {
+      return '-'
+    }
+
+    const result: string[] = []
+    this.items.forEach(item => {
+      result.push(item.name)
+    })
+    return result.join()
+  }
+
 }
