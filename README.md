@@ -1,5 +1,21 @@
 # 01knapsack-problem
 
+- [01knapsack-problem](#01knapsack-problem)
+    * [Intro](#intro)
+    * [Solution](#solution)
+        + [Problem details](#problem-details)
+        + [Solution](#solution-1)
+            - [Step 1:](#step-1-)
+            - [Step 2:](#step-2-)
+            - [Step 3 (the crux of the problem):](#step-3--the-crux-of-the-problem--)
+            - [Step 4 (final solution):](#step-4--final-solution--)
+        + [Time complexity](#time-complexity)
+    * [Structure of the code](#structure-of-the-code)
+    * [How to use](#how-to-use)
+    * [Development](#development)
+        + [Hot Reload](#hot-reload)
+        + [Test and Coverage](#test-and-coverage)
+
 ## Intro
 
 The knapsack problem is a problem in combinatorial optimization:
