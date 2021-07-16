@@ -107,3 +107,30 @@ you will get below solutions in the ./files/example_output:
 7,2
 8,9
 ```
+## How to use
+
+At the first step you should install all packages, so run this command:
+```npm run install```
+
+Then put your input file into the "files" directory. We assume that the name of file is "example_input".
+
+We use typescript in this project, so lets build it using:
+```npm run build```
+
+For the last step run the project:
+```npm run start```
+
+You can find output file in "./file" directory. Based on our above idea, output file will be "example_output".
+
+## Test and Coverage
+We use jest framework for providing unit tests.
+All tests are exist under "tests" directory.
+
+We can run all unit tests by this command:
+```npm run test```
+
+In order to be aware of code-coverage we can use:
+```npm run test:coverage```
+
+then pay attention to the "./coverage/lcov-report/index.html" file. 
+
