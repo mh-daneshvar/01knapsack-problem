@@ -5,6 +5,6 @@ import * as dotenv from 'dotenv'
 
 dotenv.config()
 
-const fileAddress = process.env.FILES_DIRECTORY + '/example_input'
+const fileAddress = process.env.FILES_DIRECTORY || './files' + '/example_input'
 const result = Pack.pack(fileAddress)
 new FileParserHelper(fileAddress).writeResult(result)
