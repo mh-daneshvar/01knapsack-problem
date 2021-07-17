@@ -150,7 +150,7 @@ You can find output file in "./file" directory. Based on our above idea, output 
 
 For development purpose use the below command to build and run at same time:
 
-```npm run start```
+```npm run start:dev```
 
 ### Test and Coverage
 
