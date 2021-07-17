@@ -15,6 +15,8 @@
     * [Development](#development)
         + [Hot Reload](#hot-reload)
         + [Test and Coverage](#test-and-coverage)
+        + [Built With](#built-with)
+    * [License](#license)
 
 ## Intro
 
@@ -166,3 +168,13 @@ In order to be aware of code-coverage we can use:
 
 then pay attention to the "./coverage/lcov-report/index.html" file. 
 
+
+### Built With
+
+* [NodeJS](https://nodejs.org/en/) - A JavaScript runtime built on Chrome's V8 JavaScript engine
+* [Typescript](https://www.typescriptlang.org/) - Typed JavaScript at Any Scale
+  &nbsp;
+
+## License
+This project is licensed under the Apache License - see the [LICENSE.md](LICENSE.md) file for details
+&nbsp;
