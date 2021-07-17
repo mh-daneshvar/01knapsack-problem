@@ -134,7 +134,10 @@ At the first step you should install all packages, so run this command:
 
 ```npm run install```
 
-Then put your input file into the "files" directory. We assume that the name of file is "example_input".
+Then put your input-file into the "files" directory. We assume that the name of file is "example_input"; 
+If you want to change the file directory, you can specify the address of that in .env file
+
+```mv .env.example .env```
 
 We use typescript in this project, so lets build it using:
 
