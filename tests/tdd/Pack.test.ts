@@ -1,12 +1,15 @@
-import Pack          from '../../src/Pack'
-import ItemModel     from '../../src/models/Item.model'
-import Strategies    from '../../src/strategies/strategies.enum'
+import Pack       from '../../src/Pack'
+import Strategies from '../../src/strategies/strategies.enum'
+import FileHelper from '../../src/helpers/file.helper'
 
-const normalItems: ItemModel[] = [
-  new ItemModel('element 1', 13, 9072),
-  new ItemModel('element 2', 40, 3380),
-  new ItemModel('element 3', 64, 676)
-]
+const fileAddress = './tests/example_input'
+beforeAll(() => {
+  new FileHelper(fileAddress).writeFile(`81 : (1,53.38,€45) (2,88.62,€98) (3,78.48,€3) (4,72.30,€76) (5,30.18,€9) (6,46.34,€48)
+8 : (1,15.3,€34)
+75 : (1,85.31,€29) (2,14.55,€74) (3,3.98,€16) (4,26.24,€55) (5,63.69,€52) (6,76.25,€75) (7,60.02,€74) (8,93.18,€35) (9,89.95,€78)
+56 : (1,90.72,€13) (2,33.80,€40) (3,43.15,€10) (4,37.97,€16) (5,46.81,€36) (6,48.77,€79) (7,81.80,€45) (8,19.36,€79) (9,6.76,€64)
+`)
+})
 
 describe('Pack Class', () => {
 
@@ -17,37 +20,9 @@ describe('Pack Class', () => {
    */
   describe('pack method', () => {
     it('check the represented solution for normalItems', () => {
-      // we take the same instance of the problem displayed in the image
-      const items = [
-        new ItemModel('element 9', 64, 676),
-        new ItemModel('element 8', 79, 1936),
-        new ItemModel('element 2', 40, 3380),
-        new ItemModel('element 4', 16, 3797),
-        new ItemModel('element 3', 10, 4315),
-        new ItemModel('element 5', 36, 4681),
-        new ItemModel('element 6', 79, 4877),
-        new ItemModel('element 7', 45, 8180),
-        new ItemModel('element 1', 13, 9072)
-      ]
-
-      const solutionModel = Pack.pack(Strategies.TABULATION, items, 5200)
-      const exceptedResult = {
-        'items': [
-          {
-            'name': 'element 8',
-            'value': 79,
-            'weight': 1936
-          },
-          {
-            'name': 'element 9',
-            'value': 64,
-            'weight': 676
-          }
-        ],
-        'maximumPossibleValue': 143
-      }
-
-      expect(solutionModel).toMatchObject(exceptedResult)
+      const solution = Pack.pack(fileAddress)
+      const exceptedResult = '4\n-\n7,2\n8,9'
+      expect(solution).toBe(exceptedResult)
     });
   })
 
