@@ -15,7 +15,7 @@ export default class TabulationStrategy implements Strategy {
    * @param capacity: the maximum capacity of bag
    */
   public constructor(items: ItemModel[], capacity: number) {
-    this.items = TabulationStrategy.sortByWeight(items);
+    this.items = this.sortByWeight(items);
     this.capacity = capacity;
     this.itemsCount = items.length;
   }
@@ -76,7 +76,7 @@ export default class TabulationStrategy implements Strategy {
    * @param items
    * @private
    */
-  private static sortByWeight(items: ItemModel[]) {
+  private sortByWeight(items: ItemModel[]) {
     for (let i = 0; i < items.length; i++) {
       for (let j = i; j < items.length; j++) {
         if (items[i].weight > items[j].weight) {
